@@ -75,7 +75,7 @@ Public Class Form1
 
 
                 For Each pb In Me.CheckedList.CheckedItems
-                    txt = txt & vbLf & "use `" & pb & "`; " & vbLf & RichTextBox1.Text
+                    txt = txt & vbLf & "use `" & pb & "`; " & vbLf & " set sql_safe_updates = 0; " & vbLf & " Select Case database(); " & vbLf & RichTextBox1.Text
                 Next
                 txt = "\T " & ComboBox1.Text & "_" & Date.Now.ToString("yyyyMMddHHmmss") & ".log" & vbLf & txt
                 If Not System.IO.File.Exists("C:\TozPatchFiles\" & ComboBox1.Text & "_" & Date.Now.ToString("yyyyMMddHHmmss") & ".sql") = True Then
